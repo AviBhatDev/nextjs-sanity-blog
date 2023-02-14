@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      sans: ['Prompt', 'sans-serif'],
+      main: ['Work Sans', 'sans-serif']
+    }
   },
   plugins: [
     require('@tailwindcss/line-clamp'),

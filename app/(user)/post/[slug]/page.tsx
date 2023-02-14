@@ -42,13 +42,13 @@ async function Post({ params: { slug }}: Props) {
   // console.log(post.body);
 
   return (
-    <article className="px-10 pb-28">
-      <section className="space-y-2 border border-[#F7AB0A] text-white">
+    <article className="border-4 p-5 bg-white border-black rounded-3xl">
+      <section className="space-y-2 border border-[#FFCC00] text-white">
         <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
           <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
             <Image className="object-cover object-center mx-auto" src={urlFor(post.mainImage).url()} alt={post.author.name} fill />
           </div>
-          <section className="p-5 bg-[#F7AB0A] w-full">
+          <section className="p-5 bg-[#FFCC00] w-full">
             <div className="flex flex-col md:flex-row justify-between gap-y-5">
               <div>
                 <h1 className="text-4xl font-extrabold">
