@@ -42,7 +42,7 @@ async function Post({ params: { slug }}: Props) {
   // console.log(post.body);
 
   return (
-    <article className="border-4 p-5 bg-white border-black rounded-3xl">
+    <article className="border-4 p-5 bg-white border-black rounded-3xl mb-10 xl:mb-24 mr-6 ml-6 xl:mr-0 xl:ml-0">
       <section className="space-y-2 border border-[#FFCC00] text-white">
         <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
           <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
