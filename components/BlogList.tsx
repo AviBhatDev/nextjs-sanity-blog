@@ -8,7 +8,6 @@ type Props = {
 };
 
 function BlogList({ posts }: Props) {
-    // console.log(posts);
    return (
     <div>
         <div className="grid grid-cols-1 md:grid-cols-2 px-5 md:px-10 gap-10 gap-y-16 pb-10 xl:pb-24">
@@ -20,7 +19,7 @@ function BlogList({ posts }: Props) {
                             <div className="flex space-x-2">
                                 <CalendarIcon className="h-6" />
                                 <p className="font-semibold">
-                                    {new Date(post._createdAt).toLocaleDateString(
+                                    {new Date(post._updatedAt).toLocaleDateString(
                                         "en-US", {
                                             day: "numeric",
                                             month: "long",
