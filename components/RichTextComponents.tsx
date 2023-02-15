@@ -14,7 +14,7 @@ export const RichTextComponents = {
     },
     list: {
         bullet: ({ children }: any) => (
-            <ul className="ml-10 py-5 list-disc space-y-5">{children}</ul>
+            <ul className="ml-[1.5rem] md:ml-10 py-5 list-disc space-y-5">{children}</ul>
         ),
         number: ({ children }: any) => (
             <ol className="mt-lg list-decimal pl-5">{children}</ol>
@@ -57,7 +57,7 @@ export const RichTextComponents = {
             : undefined;
 
             return (
-                <Link href={value.href} rel={rel} className="underline decoration-[#FFCC00] hover:decoration-black">{children}</Link>
+                <Link href={value.href} rel={rel} className="text-[#ff4800] hover:underline hover:decoration-[#ff4800] font-medium">{children}</Link>
             );
         },
     },

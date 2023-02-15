@@ -40,13 +40,13 @@ async function Post({ params: { slug }}: Props) {
   `;
 
   const post: Post = await client.fetch(query, { slug });
-  // console.log(post.body);
+  // console.log(post);
 
   return (
-    <article className="border-4 p-5 bg-white border-black rounded-3xl mb-10 xl:mb-24 mr-6 ml-6 xl:mr-0 xl:ml-0">
+    <article className="border-4 p-5 bg-white border-black rounded-3xl mb-10 mr-6 ml-6 xl:mr-0 xl:ml-0">
       <section className="space-y-2 text-white">
         <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
-          <div className="h-[30rem]">
+          <div className="h-[15rem] md:h-[30rem]">
             <Image className="object-cover object-center mx-auto" src={urlFor(post.mainImage).url()} alt={post.author.name} fill />
           </div>
           {/* <section className="p-5 bg-[#FFCC00] w-full">
@@ -94,7 +94,7 @@ async function Post({ params: { slug }}: Props) {
           <div className="flex items-center justify-center space-x-2">
             <CalendarIcon className="h-6" />
             <p className="text-lg font-semibold">
-              {new Date(post._createdAt).toLocaleDateString("en-US", {
+              {new Date(post._updatedAt).toLocaleDateString("en-US", {
                 day: "numeric",
                 month: "long",
                 year: "numeric"
@@ -119,6 +119,7 @@ async function Post({ params: { slug }}: Props) {
           <Image className="rounded-full mx-auto w-[120px] h-[120px]" src={urlFor(post.author.image).url()} alt={post.author.name} height={40} width={40} />
           <div className="">
             <h3 className="text-4xl font-bold text-center mt-5">{post.author.name}</h3>
+            <p className="text-center w-auto md:w-[40rem] mx-auto font-medium mt-3">{post.author.description}</p>
           </div>
         </div>  
       </section>
