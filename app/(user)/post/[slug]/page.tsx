@@ -4,6 +4,7 @@ import { client } from "../../../../lib/sanity.client";
 import urlFor from "../../../../lib/urlFor";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "../../../../components/RichTextComponents";
+import { CalendarIcon } from "@heroicons/react/24/solid";
 
 type Props = {
     params: {
@@ -43,12 +44,12 @@ async function Post({ params: { slug }}: Props) {
 
   return (
     <article className="border-4 p-5 bg-white border-black rounded-3xl mb-10 xl:mb-24 mr-6 ml-6 xl:mr-0 xl:ml-0">
-      <section className="space-y-2 border border-[#FFCC00] text-white">
+      <section className="space-y-2 text-white">
         <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
-          <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
+          <div className="h-[30rem]">
             <Image className="object-cover object-center mx-auto" src={urlFor(post.mainImage).url()} alt={post.author.name} fill />
           </div>
-          <section className="p-5 bg-[#FFCC00] w-full">
+          {/* <section className="p-5 bg-[#FFCC00] w-full">
             <div className="flex flex-col md:flex-row justify-between gap-y-5">
               <div>
                 <h1 className="text-4xl font-extrabold">
@@ -67,7 +68,7 @@ async function Post({ params: { slug }}: Props) {
                 <div className="w-64">
                   <h3 className="text-lg font-bold">{post.author.name}</h3>
                   <div>
-                    {/* TODO: Author Bio */}
+                    TODO: Author Bio
                   </div>
                 </div>
               </div>
@@ -84,13 +85,43 @@ async function Post({ params: { slug }}: Props) {
                   ))}
               </div>
             </div>
-          </section>
+          </section> */}
+        </div>
+      </section>
+      <section className="py-10">
+        <h1 className="text-4xl font-extrabold text-center">{post.title}</h1>
+        <div className="flex items-center justify-center mt-5 space-x-5">
+          <div className="flex items-center justify-center space-x-2">
+            <CalendarIcon className="h-6" />
+            <p className="text-lg font-semibold">
+              {new Date(post._createdAt).toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+              })}
+            </p>
+          </div>
+          <div className="flex items-center">
+              {post.categories.map((category) => (
+                  <div className="bg-[#F16363] text-center text-black px-3 py-1 rounded-full text-sm font-semibold">
+                      <p>{category.title}</p>
+                  </div>
+              ))}
+          </div>
         </div>
       </section>
       <PortableText 
         value={post.body} 
         components= {RichTextComponents} 
       />
+      <section className="py-20">
+        <div className="">
+          <Image className="rounded-full mx-auto w-[120px] h-[120px]" src={urlFor(post.author.image).url()} alt={post.author.name} height={40} width={40} />
+          <div className="">
+            <h3 className="text-4xl font-bold text-center mt-5">{post.author.name}</h3>
+          </div>
+        </div>  
+      </section>
     </article>
   )
 }
