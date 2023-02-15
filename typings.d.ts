@@ -21,6 +21,7 @@ interface Post extends Base {
 }
 
 interface Author extends Base {
+    description: ReactNode;
     bio: Block[];
     image: Image;
     name: string;

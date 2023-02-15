@@ -3,7 +3,7 @@ import { FooterBg } from '../public/bg.svg';
 
 function Footer() {
   return (
-    <footer className="px-5 md:px-0">
+    <footer className="px-5 lg:px-0">
         <div className="relative px-5 md:px-10 gap-10 gap-y-16 p-24 border-4 border-black rounded-3xl bg-[#F16363]">
             <h1 className="font-bold text-2xl text-center">STAY IN THE LOOP</h1>
             <p className="font-medium text-center">Get the latest posts delivered right to your mail.</p>
