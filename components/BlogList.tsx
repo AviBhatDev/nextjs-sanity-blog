@@ -14,7 +14,7 @@ function BlogList({ posts }: Props) {
             {/* Posts */}
             {posts.map(post => (
                 <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
-                    <div className="flex flex-col group cursor-pointer border-4 p-5 bg-white border-black rounded-3xl min-h-0 md:min-h-[740px] lg:min-h-[705px]">
+                    <div className="relative flex flex-col group cursor-pointer border-4 p-5 bg-white border-black rounded-3xl min-h-0 md:min-h-[740px] lg:min-h-[705px] boxShadow">
                         <div className="flex justify-between border-b-4 -mr-5 -ml-5 pb-4 pl-5 pr-5 border-black mb-8">
                             <div className="flex space-x-2">
                                 <CalendarIcon className="h-6" />
