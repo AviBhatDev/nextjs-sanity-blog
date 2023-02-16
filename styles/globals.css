@@ -9,4 +9,8 @@
     body {
         @apply font-main;
     }
+
+    .boxShadow {
+       @apply after:content-[''] after:absolute after:top-0 after:left-[-4px] after:right-[-4px] after:bottom-[-10px] after:z-[-1] after:rounded-b-[45px] after:border-b-[10px] after:border-black;
+    }
 }
