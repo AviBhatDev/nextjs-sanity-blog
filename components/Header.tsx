@@ -12,7 +12,7 @@ function Header() {
         <h1>The Avians</h1>
       </div>
       <div>
-        <Link href="/" className="font-medium px-5 py-3 text-xs md:text-base bg-gray-900 text-[#FFCC00] flex items-center rounded-full text-center">Sign Up For New Content</Link>
+        <Link href="/studio" className="font-medium px-5 py-3 text-xs md:text-base bg-gray-900 text-[#FFCC00] flex items-center rounded-full text-center">Sign In For New Content</Link>
       </div>
     </header>
   )
